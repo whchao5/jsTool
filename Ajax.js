@@ -64,12 +64,30 @@ function Ajax(opt) {
             }
         }
 
-        if (opt.statusCode) {
+        // 处理定义的 状态码
+        if (opt.statusCode &&  request.status >= 400) {
+            var CodeCallback = opt.statusCode;
             for (var code in opt.statusCode) {
                 if (request.status == code) {
-
+                    CodeCallback[code](request.response);
                 }
             }
         }
+    };
+
+    // 选择 json ,callback
+    function switchCallback(callback) {
+        switch (toLowerCase(opt.type)) {
+            case 'json':
+                var data = JSON.parse(request.response);
+                if (!data) {
+                    opt.fail("数据格式有误！");
+                }
+                callback(data);
+                break;
+            default :
+                callback(request.response);
+        }
     }
+
 }
