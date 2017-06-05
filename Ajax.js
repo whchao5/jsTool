@@ -65,7 +65,11 @@ function Ajax(opt) {
         }
 
         if (opt.statusCode) {
+            for (var code in opt.statusCode) {
+                if (request.status == code) {
 
+                }
+            }
         }
     }
 }
