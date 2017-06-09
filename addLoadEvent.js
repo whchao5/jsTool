@@ -15,3 +15,35 @@ function addLoadEvent(func) {
         }
     }
 }
+
+
+/* 
+** 获取数据 URL 的参数
+** $_GET("key") 
+** return string, null
+*/
+function $_GET(key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r !== null)
+        return decodeURIComponent(r[2]);
+    return null;
+}
+
+
+/*
+ * 获得id 的集合  
+ * getObjId("id1", "id2", "id3")
+ * return array
+*/
+function getObjId(/*ids...*/) {
+    var elements = {};
+    for (var i = 0; i < arguments.length; i++) {
+        var id = arguments[i];
+        var ele = document.getElementById(id);
+        if (ele === null)
+            throw new Error('没有该id');
+        elements[id] = ele;
+    }
+    return elements;
+}
