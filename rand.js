@@ -7,10 +7,10 @@ function randomNum(min, max) {
 
 // 生成 一串字符串随机字符串
 function generate_fun(length = 9) {
-    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    var password = '';
-    for (var i = 0; i < length; i++) {
-        password += chars[parseInt(Math.random()*(chars.length+1), 10)]
-    }
-    return password;
+  var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_ []{}<>~`+=,.;:/?|';
+  var password = '';
+  for (var i = 0; i < length; i++) {
+    password += chars[parseInt(Math.random() * chars.length, 10)]
+  }
+  return password;
 }
