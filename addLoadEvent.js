@@ -47,3 +47,11 @@ function getObjId(/*ids...*/) {
     }
     return elements;
 }
+
+
+/*
+** 检查 {} 是否为空
+*/
+function isEmpty(value) {
+    return Object.keys(value).length === 0;
+}
