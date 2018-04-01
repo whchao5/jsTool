@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../jsonParse.js"></script>
+    <title>json</title>
+</head>
+<body>
+
+<p>json_parse 测试</p>
+
+<script>
+
+    var t = '{"name" : "wuhaoc","names" : "uyou","array" : ["wos"]}';
+    var a = '{"name" : "wuhaoc","names" : "uyou","array" : "wos"}';
+    var b = '[1, 5, "false"]';
+    var c = 'null';
+    var d = '{}';
+    var e = '{"one" : "whc"}';
+
+
+    // 解析 数组有问题
+    console.log(json_parse(e));
+
+</script>
+
+</body>
+</html>
