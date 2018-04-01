@@ -71,6 +71,8 @@ var json_parse = function () {
                 }
             }
             number += string;
+
+            log(number);
             if (isNaN(number)) {
                 error('Bad number');
             } else {
@@ -165,6 +167,7 @@ var json_parse = function () {
                 }
                 while (ch) {
                     array.push(value());
+                    log(array);
                     white();
                     if (ch === ']') {
                         next(']');
@@ -176,6 +179,7 @@ var json_parse = function () {
             }
             error("Bad array");
         },
+        log = console.log.bind(console),
 
         object = function () {
             var key,
