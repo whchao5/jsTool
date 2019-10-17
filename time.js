@@ -68,4 +68,20 @@ function Dates() {
         var item = Number(nowTime) + Number(m);
         return this.getData(item);
     }
+    
+                        /**
+                     * 判断是否 ‘0000-00-00 00：00：00' 是返回 ture, 不是 false
+                     * @param strtime
+                     * @returns {boolean}
+                     */
+      this.isZeroTime(strtime) {
+                        if (typeof strtime === "string" && strtime) {
+                            var timeChou = new Date(strtime);
+                            if (isNaN(timeChou.getTime())) {
+                                return true;
+                            }
+                            return false;
+                        }
+                    }
+    
 }
